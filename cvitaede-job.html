@@ -89,7 +89,7 @@
   <template>
     <p slot="date" class="date">{{jobDate}}</p>
     <div class="job" on-tap="showJobDesc">
-      <h3 slot="job">{{jobName}}</h3>
+      <h3 slot="job">{{jobPosition}}</h3>
       <input class="showBtn plus" type="button" value="+" />
     </div>
     <p slot="description" class="desc">{{jobDesc}}</p>
@@ -104,7 +104,7 @@
         jobDate: {
           type: String
         },
-        jobName: {
+        jobPosition: {
           type: String
         },
         jobDesc: {
@@ -112,7 +112,7 @@
         }
       },
       attached: function() {
-        this.jobName = this.queryEffectiveChildren('job-name').innerHTML;
+        this.jobPosition = this.queryEffectiveChildren('job-position').innerHTML;
         this.jobDesc = this.queryEffectiveChildren('job-description').innerHTML;
         this.jobDate = this.queryEffectiveChildren('job-date').innerHTML;
       },
